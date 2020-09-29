@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Renesas_Analog_Switch)(type Legacy)(uri ${KIPRJMOD}/Renesas_Analog_Switch.lib)(options "")(descr ""))
+)
