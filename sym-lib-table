@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name Renesas_Analog_Switch)(type Legacy)(uri ${KIPRJMOD}/Renesas_Analog_Switch.lib)(options "")(descr ""))
+  (lib (name Battery_Storage_Device-rescue)(type Legacy)(uri ${KIPRJMOD}/Battery_Storage_Device-rescue.lib)(options "")(descr ""))
 )

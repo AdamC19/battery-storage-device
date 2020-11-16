@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:Battery_Storage_Device-cache
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -13,16 +14,16 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 9250 4100 2    50   Output ~ 0
+Text HLabel 10350 4100 2    50   Output ~ 0
 PWM_SINK
 Wire Wire Line
-	9250 4100 8850 4100
+	10350 4100 9750 4100
 Text HLabel 9250 4300 2    50   Output ~ 0
 RELAY
 Wire Wire Line
 	9250 4300 8850 4300
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU U10
+L Battery_Storage_Device-rescue:ATmega328P-AU-MCU_Microchip_ATmega U10
 U 1 1 60A85D5A
 P 8250 3100
 F 0 "U10" H 8550 4650 50  0000 C CNN
@@ -597,7 +598,7 @@ Wire Wire Line
 Text HLabel 7350 2100 0    50   Output ~ 0
 VC4_BAL
 Wire Wire Line
-	9250 4200 8850 4200
+	10350 4200 10100 4200
 Text HLabel 9300 1900 2    50   Output ~ 0
 VC5_BAL
 Text HLabel 9300 2000 2    50   Output ~ 0
@@ -632,7 +633,7 @@ F 3 "" H 8250 4600 50  0001 C CNN
 	1    8250 4600
 	1    0    0    -1  
 $EndComp
-Text HLabel 9250 4200 2    50   Output ~ 0
+Text HLabel 10350 4200 2    50   Output ~ 0
 PWM_SRC
 Wire Wire Line
 	7650 2100 7350 2100
@@ -777,4 +778,118 @@ Wire Wire Line
 	3450 5450 3450 5550
 Text HLabel 9250 3800 2    50   Output ~ 0
 ZERO_CAP
+$Comp
+L Device:LED D20
+U 1 1 5FC98538
+P 6350 2900
+F 0 "D20" V 6389 2782 50  0000 R CNN
+F 1 "LED" V 6298 2782 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 6350 2900 50  0001 C CNN
+F 3 "~" H 6350 2900 50  0001 C CNN
+	1    6350 2900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5FC9853E
+P 6350 2500
+AR Path="/5FC9853E" Ref="R?"  Part="1" 
+AR Path="/5F7CB9B2/5FC9853E" Ref="R49"  Part="1" 
+F 0 "R49" V 6555 2500 50  0000 C CNN
+F 1 "1k" V 6464 2500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6390 2490 50  0001 C CNN
+F 3 "~" H 6350 2500 50  0001 C CNN
+	1    6350 2500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6350 2350 6350 2200
+Wire Wire Line
+	6350 2650 6350 2750
+Wire Wire Line
+	6350 3050 6350 3200
+$Comp
+L power:GND #PWR026
+U 1 1 5FC98547
+P 6350 3200
+F 0 "#PWR026" H 6350 2950 50  0001 C CNN
+F 1 "GND" H 6355 3027 50  0000 C CNN
+F 2 "" H 6350 3200 50  0001 C CNN
+F 3 "" H 6350 3200 50  0001 C CNN
+	1    6350 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR025
+U 1 1 5FC9CE8C
+P 6350 2200
+F 0 "#PWR025" H 6350 2050 50  0001 C CNN
+F 1 "+5V" H 6365 2373 50  0000 C CNN
+F 2 "" H 6350 2200 50  0001 C CNN
+F 3 "" H 6350 2200 50  0001 C CNN
+	1    6350 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 609EC01B
+P 9750 4450
+AR Path="/609EC01B" Ref="R?"  Part="1" 
+AR Path="/5F7CB9B2/609EC01B" Ref="R53"  Part="1" 
+F 0 "R53" V 9955 4450 50  0000 C CNN
+F 1 "10k" V 9864 4450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9790 4440 50  0001 C CNN
+F 3 "~" H 9750 4450 50  0001 C CNN
+	1    9750 4450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9750 4300 9750 4100
+Connection ~ 9750 4100
+Wire Wire Line
+	9750 4100 8850 4100
+Wire Wire Line
+	9750 4600 9750 4700
+$Comp
+L power:GND #PWR083
+U 1 1 609F6990
+P 9750 4700
+F 0 "#PWR083" H 9750 4450 50  0001 C CNN
+F 1 "GND" H 9755 4527 50  0000 C CNN
+F 2 "" H 9750 4700 50  0001 C CNN
+F 3 "" H 9750 4700 50  0001 C CNN
+	1    9750 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 609FD047
+P 10100 4450
+AR Path="/609FD047" Ref="R?"  Part="1" 
+AR Path="/5F7CB9B2/609FD047" Ref="R54"  Part="1" 
+F 0 "R54" V 10305 4450 50  0000 C CNN
+F 1 "10k" V 10214 4450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 10140 4440 50  0001 C CNN
+F 3 "~" H 10100 4450 50  0001 C CNN
+	1    10100 4450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 4600 10100 4700
+$Comp
+L power:GND #PWR084
+U 1 1 609FD04E
+P 10100 4700
+F 0 "#PWR084" H 10100 4450 50  0001 C CNN
+F 1 "GND" H 10105 4527 50  0000 C CNN
+F 2 "" H 10100 4700 50  0001 C CNN
+F 3 "" H 10100 4700 50  0001 C CNN
+	1    10100 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 4300 10100 4200
+Connection ~ 10100 4200
+Wire Wire Line
+	10100 4200 8850 4200
 $EndSCHEMATC
